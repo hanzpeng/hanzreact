@@ -11,5 +11,6 @@ export default function Header() {
                     <li>Contact</li>
                 </ul>
             </nav>
-        </header>)
+        </header>
+    )
 }
