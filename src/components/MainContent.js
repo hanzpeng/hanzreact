@@ -1,4 +1,34 @@
-export default function MainContent() {
+
+  import React, { useEffect, useState } from "react";
+
+  function Button(props){
+    const handleClick = () => props.onclickFunction(props.increment);
+    return (
+      <button onClick={handleClick}>
+      +{props.increment}
+      </button>
+    )
+  }
+
+  function Display(props) {
+    return (
+      <div>{props.message}</div>
+    )
+  }
+
+  function Counters(){
+    const [counter, setCounter] = useState(0);
+    const incrementCounter = (x) => {setCounter(counter + x)};
+    return (
+      <div>
+      <Button onclickFunction = {incrementCounter} increment = {1} />
+      <Button onclickFunction = {incrementCounter} increment = {5} />
+      <Display message = {counter}/>
+    </div>
+    )
+  }
+
+  export default function MainContent() {
     return (
       <div>
         <h2>Welcome to Hanz React Page</h2>
@@ -18,6 +48,8 @@ export default function MainContent() {
         >
           Learn React
         </a>
+        <Counters />
       </div>
     )
   }
+
