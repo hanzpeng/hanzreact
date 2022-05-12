@@ -12,9 +12,18 @@
 
   function Display(props) {
     return (
-      <div>{props.message}</div>
+      <div>
+        <div>
+        {props.message}
+        </div>
+        <div>
+        <input/>
+         
+        </div>
+      </div>
     )
   }
+
 
   function Counters(){
     const [counter, setCounter] = useState(0);
@@ -28,10 +37,19 @@
     )
   }
 
+  function HelloReact(){
+    return   React.createElement(
+      "div",
+        null,
+        "Hello React",
+        React.createElement('input', null)
+      );
+  }
   export default function MainContent() {
     return (
       <div>
         <h2>Welcome to Hanz React Page</h2>
+        <HelloReact />
         <ol>
           <li>test111</li>
           <li>test222</li>
@@ -53,3 +71,6 @@
     )
   }
 
+  
+
+   
