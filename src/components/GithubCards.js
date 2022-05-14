@@ -1,5 +1,5 @@
 // GitHub usernames: gaearon, sophiebits, sebmarkbage, bvaughn
-
+import './GithubCard.scss';
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 const CardList = (props) => (
