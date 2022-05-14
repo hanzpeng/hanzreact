@@ -31,11 +31,12 @@ const Card = (profile) => (
     <div className="info">
       <div className="name">{profile.name}</div>
       <div className="company">{profile.company}</div>
+      <div >{profile.company}</div>
     </div>
   </div>
 );
 
-class Form extends React.Component {
+class FormNotUsed extends React.Component {
 	state = { userName: '' };
 	handleSubmit = async (event) => {
   	event.preventDefault();
@@ -57,6 +58,28 @@ class Form extends React.Component {
     	</form>
     );
   }
+}
+
+const Form = (props) => {
+  const [userName, setUserName] = useState('');
+	const handleSubmit = async (event) => {
+  	event.preventDefault();
+    const resp = await axios.get(`https://api.github.com/users/${userName}`);
+    props.onSubmit(resp.data);
+    setUserName('');
+  };
+  return (
+    <form onSubmit={handleSubmit}>
+      <input 
+        type="text" 
+        value={userName}
+        onChange={event => setUserName(event.target.value)}
+        placeholder="GitHub username" 
+        required 
+      />
+      <button>Add card</button>
+    </form>
+  );
 }
 
 export default class GithubCards extends React.Component {
