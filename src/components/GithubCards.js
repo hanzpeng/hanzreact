@@ -1,4 +1,6 @@
+//copied from https://jsdrops.com/rgs2.7
 // GitHub usernames: gaearon, sophiebits, sebmarkbage, bvaughn
+
 import './GithubCard.scss';
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -8,7 +10,7 @@ const CardList = (props) => (
 	</div>
 );
 
-class Card extends React.Component {
+class CardNotUsed extends React.Component {
 	render() {
   	const profile = this.props;
   	return (
@@ -22,6 +24,16 @@ class Card extends React.Component {
     );
   }
 }
+
+const Card = (profile) => (
+  <div className="github-profile">
+    <img src={profile.avatar_url} />
+    <div className="info">
+      <div className="name">{profile.name}</div>
+      <div className="company">{profile.company}</div>
+    </div>
+  </div>
+);
 
 class Form extends React.Component {
 	state = { userName: '' };
