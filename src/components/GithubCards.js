@@ -1,7 +1,7 @@
 // GitHub usernames: gaearon, sophiebits, sebmarkbage, bvaughn
 
 import React, { useEffect, useState } from "react";
-import ReactDOM from 'react-dom/client';
+import axios from "axios";
 const CardList = (props) => (
 	<div>
   	{props.profiles.map(profile => <Card key={profile.id} {...profile}/>)}
