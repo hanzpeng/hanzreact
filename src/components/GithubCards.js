@@ -82,7 +82,7 @@ const Form = (props) => {
   );
 }
 
-export default class GithubCards extends React.Component {
+class GithubCardsNotUsed extends React.Component {
   state = {
     profiles: [],
   };
@@ -101,3 +101,19 @@ export default class GithubCards extends React.Component {
     );
   }	
 }
+
+const GithubCards = (props) => {
+  const [profiles, setProfiles] = useState([]);
+  const addNewProfile = (profileData) => {
+    setProfiles([...profiles, profileData]);
+  };
+  return (
+    <div>
+      <div className="header">{props.title}</div>
+      <Form onSubmit={addNewProfile} />
+      <CardList profiles={profiles} />
+    </div>
+  );
+}
+
+export default GithubCards

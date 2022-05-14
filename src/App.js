@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Navbar></Navbar>
       <MainContent></MainContent>
-      <GithubCards></GithubCards>
+      <GithubCards title="Add Github Cards"></GithubCards>
       <Footer></Footer>
     </div>
   );
