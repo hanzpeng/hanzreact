@@ -13,7 +13,7 @@ function App() {
         <Navbar></Navbar>
         <Routes>
           <Route exact path="/" element={<MainContent/>} />
-          <Route exact path="/github" element={<GithubCards/>} />
+          <Route exact path="/githubcards" element={<GithubCards/>} />
           <Route exact path="/starmatch" element={<StarMatch/>} />
           <Route path="*" element={<NotFound/>}/>
         </Routes>

@@ -6,9 +6,9 @@ export default function Navbar() {
             <nav className="nav">
                 <img src={logo} className="App-logo" alt="logo" />
                 <ul className="nav-items">
-                    <li>Pricing</li>
-                    <li>About</li>
-                    <li>Contact</li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/githubcards">Github Hards</a></li>
+                    <li><a href="/starmatch">StartMatch</a></li>
                 </ul>
             </nav>
         </header>
