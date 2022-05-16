@@ -12,10 +12,10 @@ function App() {
       <div className="App">
         <Navbar></Navbar>
         <Routes>
-          <Route exact path="/" element={<MainContent/>} />
-          <Route exact path="/githubcards" element={<GithubCards/>} />
-          <Route exact path="/starmatch" element={<StarMatch/>} />
-          <Route path="*" element={<NotFound/>}/>
+          <Route exact path="/" element={<MainContent />} />
+          <Route exact path="/github" element={<GithubCards />} />
+          <Route exact path="/starmatch" element={<StarMatch />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer></Footer>
       </div>
@@ -23,12 +23,8 @@ function App() {
   );
 }
 
-function NotFound(){
-  return (
-    <div>
-      page not found
-    </div>
-  )
-};
+function NotFound() {
+  return <div>page not found</div>;
+}
 
 export default App;
