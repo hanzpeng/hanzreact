@@ -12,9 +12,10 @@ function App() {
       <div className="App">
         <Navbar></Navbar>
         <Routes>
-          <Route exact path="/" element={<MainContent />} />
-          <Route exact path="/githubcards" element={<GithubCards title='Github Cards'/>} />
-          <Route exact path="/starmatch" element={<StarMatch />} />
+          <Route path="/" element={<MainContent />} />
+          <Route path="starmatch" element={<StarMatch />} />
+          <Route path="githubcards" element={<GithubCards title='Github Cards'/>} />
+          <Route path="githubcards/:id" element={<GithubCards title='Github Cards'/>}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer></Footer>
