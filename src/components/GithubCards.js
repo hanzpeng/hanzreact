@@ -4,6 +4,7 @@
 import './GithubCard.scss';
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useParams } from 'react-router-dom';
 const CardList = (props) => (
 	<div>
   	{props.profiles.map(profile => <Card key={profile.id} {...profile}/>)}
@@ -104,6 +105,7 @@ class GithubCardsNotUsed extends React.Component {
 }
 
 const GithubCards = (props) => {
+  const {id} = useParams;
   const [profiles, setProfiles] = useState([]);
   const addNewProfile = (profileData) => {
     setProfiles([...profiles, profileData]);
