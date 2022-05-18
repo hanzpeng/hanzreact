@@ -48,14 +48,14 @@ const Form = (props) => {
 
 
 const GithubCards = (props) => {
-  const {id} = useParams;
+  const {id} = useParams();
   const [profiles, setProfiles] = useState([]);
   const addNewProfile = (profileData) => {
     setProfiles([...profiles, profileData]);
   };
   return (
     <div>
-      <div className="header">{props.title}</div>
+      <div className="header">{props.title} - { id }</div>
       <Form onSubmit={addNewProfile} />
       <CardList profiles={profiles} />
     </div>
