@@ -7,7 +7,7 @@ const SherryVideo = (props) => {
             <h1>Sherry Video</h1>
             <img src = {sherry} width="300" alt="Sherry" />
             <hr></hr>
-            <video src={sherryvideo} autoPlay controls poster='sherry'></video>
+            <video src={sherryvideo} autoPlay controls poster='sherry' width="800" style={{padding: 20, margin: 20}}></video>
 
         </div>
 
