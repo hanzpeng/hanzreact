@@ -11,6 +11,7 @@ export default function Navbar() {
                     <li><Link to="/githubcards">Github Hards</Link></li>
                     <li><Link to="/starmatch">StartMatch</Link></li>
                     <li><Link to="/sherryvideo">Sherry Video</Link></li>
+                    <li><Link to="/draw">Draw</Link></li>
                 </ul>
             </nav>
         </header>

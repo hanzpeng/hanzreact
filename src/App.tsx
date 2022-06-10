@@ -6,6 +6,7 @@ import GithubCards from "./components/GithubCards";
 import StarMatch from "./components/StarMatch";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SherryVideo from "./components/SherryVideo";
+import Draw from "./components/Draw";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="githubcards" element={<GithubCards title='Github Cards'/>} />
           <Route path="githubcards/:id" element={<GithubCards title='Github Cards'/>}/>
           <Route path="sherryvideo" element={<SherryVideo />} />
+          <Route path="draw" element={<Draw />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer></Footer>
