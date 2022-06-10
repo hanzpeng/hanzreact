@@ -7,10 +7,15 @@ const Draw = (props) => {
     useEffect(
         () => {
             const canvas = canvasRef.current;
-            canvas.width = window.innerWidth*2;
-            canvas.height = window.innerHeight*2;
-            canvas.style.width = `${window.innerWidth}px`;
-            canvas.style.height = `${window.innerHeight}px`;
+            let canvas_style_width = window.innerWidth;
+            let canvas_style_height = window.innerHeight;
+            canvas_style_width = 1000;
+            canvas_style_height = 1000;
+            canvas.width = canvas_style_width*2;
+            canvas.height = canvas_style_height*2;
+            canvas.style.width = `${canvas_style_width}px`;
+            canvas.style.height = `${canvas_style_height}px`;
+            canvas.style.border = "2px solid blue";
             const context = canvas.getContext("2d");
             context.scale(2,2);
             context.lineWidth = 5;
@@ -42,15 +47,20 @@ const Draw = (props) => {
 
     const saveDrawing = () => {
         const canvas = canvasRef.current;
-        const image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); 
-        window.location.href = image;
+        // save canvas image as data url (png format by default)
+        const dataURL = canvas.toDataURL();
+        // set canvasImg image src to dataURL
+        document.getElementById('canvasImg').src = dataURL;
     }
 
     return (
 
         <div>
-            <h1>Draw</h1>
+            <h1>Draw below</h1>
             <button onClick={saveDrawing}>Save</button>
+            <div style={{margin: 5}}>
+            <img id="canvasImg" alt="Right click to save me!" style={{width: 100, height:100, border: '2px solid blue'}}></img>
+            </div>
             <hr></hr>
             <canvas id="canvas"
             onMouseDown={startDrawing}
