@@ -40,10 +40,17 @@ const Draw = (props) => {
       contextRef.current.stroke();
     }
 
+    const saveDrawing = () => {
+        const canvas = canvasRef.current;
+        const image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); 
+        window.location.href = image;
+    }
+
     return (
 
         <div>
             <h1>Draw</h1>
+            <button onClick={saveDrawing}>Save</button>
             <hr></hr>
             <canvas id="canvas"
             onMouseDown={startDrawing}
