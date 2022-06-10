@@ -21,7 +21,9 @@ const Draw = (props) => {
             context.lineWidth = 5;
             context.lineCap = "round";
             context.strokeStyle = "black";
-            contextRef.current = context;           
+            contextRef.current = context;       
+            context.fillStyle = "white";
+            context.fillRect(0, 0, canvas.width, canvas.height);    
         }, []
     )
     const startDrawing = ({nativeEvent}) => {
